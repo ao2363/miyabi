@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
 import restaurantRoutes from './routes/restaurants';
+import reviewRoutes from './routes/reviews';
 
 dotenv.config();
 
@@ -28,6 +29,9 @@ app.use('/api/auth', authRoutes);
 
 // Restaurant routes
 app.use('/api/restaurants', restaurantRoutes);
+
+// Review routes
+app.use('/api/reviews', reviewRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
