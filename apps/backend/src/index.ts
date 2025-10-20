@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
+import restaurantRoutes from './routes/restaurants';
 
 dotenv.config();
 
@@ -24,6 +25,9 @@ app.get('/api', (req: Request, res: Response) => {
 
 // Auth routes
 app.use('/api/auth', authRoutes);
+
+// Restaurant routes
+app.use('/api/restaurants', restaurantRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
